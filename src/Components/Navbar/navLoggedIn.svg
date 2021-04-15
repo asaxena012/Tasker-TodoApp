@@ -1,0 +1,14 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 24H38" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M16 34H38" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M16 44H38" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M16 54H38" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M12 24H8" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M12 34H8" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M12 44H8" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M12 54H8" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M14 8H1V63H45V8H32" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M27 5V1H19V5H15L13 13H33L31 5H27Z" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M63 3V53L59 61L55 53V3H63Z" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+<path d="M55 7H51V17" stroke="#2C3A47" stroke-width="2" stroke-miterlimit="10"/>
+</svg>

@@ -7,7 +7,7 @@ import AppBody from "./../AppBody/AppBody";
 
 class App extends React.Component {
   state = {
-    loggedIn: false,
+    loggedIn: true,
   };
 
   render() {

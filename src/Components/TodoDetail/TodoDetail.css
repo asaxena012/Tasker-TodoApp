@@ -1,0 +1,37 @@
+.todoDetail-container {
+  position: relative;
+  padding: 30px 20px;
+  border-radius: 10px;
+  font-size: 24px;
+  word-wrap: break-word;
+  max-width: 550px;
+  text-align: center;
+  margin: 35px;
+}
+
+.undone {
+  border: 1.5px solid #2c3a47;
+}
+
+.done {
+  border: 2px solid #55e6c1;
+}
+
+.close-btn {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  cursor: pointer;
+  transition: all 0.3s;
+  transform: scale(0.85);
+}
+
+.close-btn:hover {
+  transform: scale(1);
+}
+
+@media only screen and (max-width: 450px) {
+  .todoDetail-container {
+    max-width: 300px;
+  }
+}

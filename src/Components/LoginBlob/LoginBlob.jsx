@@ -3,12 +3,17 @@ import "./LoginBlob.css";
 import blob from "./blob.svg";
 import googleIcon from "./google-icon.svg";
 
-const LoginBlob = () => {
+const LoginBlob = ({ signInWithGoogle }) => {
   return (
     <div className="loginBlob-container">
       <img className="blob" src={blob} alt="" />
 
-      <img className="google-icon" src={googleIcon} alt="" />
+      <img
+        onClick={signInWithGoogle}
+        className="google-icon"
+        src={googleIcon}
+        alt=""
+      />
     </div>
   );
 };

@@ -7,14 +7,24 @@ import AppBody from "./../AppBody/AppBody";
 
 class App extends React.Component {
   state = {
-    loggedIn: true,
+    loggedIn: false,
+    user: "Aditya",
+  };
+
+  signInWithGoogle = () => {
+    console.log("Username: ", this.state.user);
+    this.setState({ loggedIn: true });
   };
 
   render() {
     return (
       <div className="app-container">
         <Navbar loggedIn={this.state.loggedIn} />
-        {this.state.loggedIn ? <AppBody /> : <LoginBlob />}
+        {this.state.loggedIn ? (
+          <AppBody />
+        ) : (
+          <LoginBlob signInWithGoogle={this.signInWithGoogle} />
+        )}
         <Footer />
       </div>
     );

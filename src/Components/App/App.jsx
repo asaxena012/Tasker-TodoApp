@@ -17,7 +17,7 @@ const signInWithGoogle = () => {
 };
 
 const App = () => {
-  const [user] = useAuthState(auth);
+  const [user, loading] = useAuthState(auth);
   console.log(user);
   return (
     <div className="app-container">

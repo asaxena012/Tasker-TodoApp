@@ -5,8 +5,10 @@
   font-size: 24px;
   word-wrap: break-word;
   max-width: 550px;
+  min-width: 300px;
   text-align: center;
   margin: 35px;
+  transition: all 0.3s;
 }
 
 .undone {
@@ -14,7 +16,7 @@
 }
 
 .done {
-  border: 2px solid #55e6c1;
+  border: 1.5px solid #55e6c1;
 }
 
 .close-btn {

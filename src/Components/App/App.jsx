@@ -4,31 +4,32 @@ import Navbar from "./../Navbar/Navbar";
 import Footer from "./../Footer/Footer";
 import LoginBlob from "./../LoginBlob/LoginBlob";
 import AppBody from "./../AppBody/AppBody";
+import { auth } from "../../firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import firebase from "firebase";
 
-class App extends React.Component {
-  state = {
-    loggedIn: false,
-    user: "Aditya",
-  };
+const signInWithGoogle = () => {
+  //Create instance of Google Authentication Provider
+  const provider = new firebase.auth.GoogleAuthProvider();
 
-  signInWithGoogle = () => {
-    console.log("Username: ", this.state.user);
-    this.setState({ loggedIn: true });
-  };
+  //Use firebase auth feature to sign in with popup using provider
+  auth.signInWithPopup(provider);
+};
 
-  render() {
-    return (
-      <div className="app-container">
-        <Navbar loggedIn={this.state.loggedIn} />
-        {this.state.loggedIn ? (
-          <AppBody />
-        ) : (
-          <LoginBlob signInWithGoogle={this.signInWithGoogle} />
-        )}
-        <Footer />
-      </div>
-    );
-  }
-}
+const App = () => {
+  const [user] = useAuthState(auth);
+  console.log(user);
+  return (
+    <div className="app-container">
+      <Navbar loggedIn={user} />
+      {user ? (
+        <AppBody displayName={user?.displayName} />
+      ) : (
+        <LoginBlob signInWithGoogle={signInWithGoogle} />
+      )}
+      <Footer />
+    </div>
+  );
+};
 
 export default App;

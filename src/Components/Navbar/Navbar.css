@@ -29,6 +29,22 @@
   font-weight: 500;
 }
 
+/* Nav icon animation */
+.nav-image-container {
+  position: relative;
+}
+
+.nav-image-container img {
+  position: absolute;
+  right: 0px;
+  opacity: 1;
+  transition: opacity 0.5s linear;
+}
+
+.hidden {
+  opacity: 0 !important;
+}
+
 @media only screen and (max-width: 450px) {
   .nav-wave {
     height: 200px;

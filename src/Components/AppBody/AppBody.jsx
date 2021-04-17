@@ -38,6 +38,11 @@ const AppBody = ({ displayName }) => {
         type="text"
         placeholder="What's next?"
         onChange={(e) => setCurTodo(e.target.value)}
+        onKeyUp={(e) => {
+          if (e.key == "Enter") {
+            addTask();
+          }
+        }}
       />
       <button className="btn-add" onClick={addTask}>
         Add task

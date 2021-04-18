@@ -4,6 +4,7 @@ import TodoDetail from "../TodoDetail/TodoDetail";
 import "./AppBody.css";
 import { useCollectionData } from "react-firebase-hooks/firestore";
 import firebase from "./../../firebase";
+import LoaderTasker from "../LoaderTasker/LoaderTasker";
 
 const AppBody = ({ displayName }) => {
   //Current todo (input)
@@ -28,13 +29,23 @@ const AppBody = ({ displayName }) => {
     setCurTodo("");
   };
 
+  const todoComps = todos?.map((todo) => {
+    return <TodoDetail {...todo} />;
+  });
+
+  const emptyTodoStyle = {
+    margin: "50px 0px",
+    fontFamily: "inherit",
+    fontSize: "18px",
+  };
+
   return (
     <div className="appBody-container">
-      <p className="appbody-header">
+      <p className="appbody-header animate__animated animate__fadeIn">
         Welcome to tasker, {displayName.split(" ")[0]}
       </p>
       <input
-        className="task-input"
+        className="task-input animate__animated animate__fadeIn"
         type="text"
         placeholder="What's next?"
         onChange={(e) => setCurTodo(e.target.value)}
@@ -48,12 +59,17 @@ const AppBody = ({ displayName }) => {
         Add task
       </button>
       <div className="todos-container">
-        {todos?.map((todo) => {
-          return <TodoDetail {...todo} />;
-        })}
+        {todos?.length ? (
+          todoComps
+        ) : (
+          // <LoaderTasker text="Wow so empty? Add a task and get started" />
+          <div style={emptyTodoStyle} data-aos="fade-up">
+            Wow so empty? Add a task and get started
+          </div>
+        )}
       </div>
       <button
-        className="btn-add"
+        className="btn-signout"
         onClick={() => {
           auth.signOut();
         }}

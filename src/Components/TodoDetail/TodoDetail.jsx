@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./TodoDetail.css";
 import closeBtn from "./close-icon.svg";
 import { auth, firestore } from "./../../firebase";
@@ -15,9 +15,11 @@ const TodoDetail = ({ id, text, complete }) => {
   };
 
   return (
-    <div className={`todoDetail-container ${complete ? "done" : "undone"}`}>
-      <p onClick={completeTodo}>{text}</p>
-      <img className="close-btn" src={closeBtn} alt="" onClick={deleteTodo} />
+    <div data-aos="fade-up">
+      <div className={`todoDetail-container ${complete ? "done" : "undone"} `}>
+        <p onClick={completeTodo}>{text}</p>
+        <img className="close-btn" src={closeBtn} alt="" onClick={deleteTodo} />
+      </div>
     </div>
   );
 };

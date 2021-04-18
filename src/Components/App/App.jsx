@@ -7,6 +7,7 @@ import AppBody from "./../AppBody/AppBody";
 import { auth } from "../../firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import firebase from "firebase";
+import LoaderTasker from "../LoaderTasker/LoaderTasker";
 
 const signInWithGoogle = () => {
   //Create instance of Google Authentication Provider
@@ -18,15 +19,17 @@ const signInWithGoogle = () => {
 
 const App = () => {
   const [user, loading] = useAuthState(auth);
-  console.log(user);
+
+  const nonLoadingComp = user ? (
+    <AppBody displayName={user?.displayName} />
+  ) : (
+    <LoginBlob signInWithGoogle={signInWithGoogle} />
+  );
+
   return (
     <div className="app-container">
       <Navbar loggedIn={user} />
-      {user ? (
-        <AppBody displayName={user?.displayName} />
-      ) : (
-        <LoginBlob signInWithGoogle={signInWithGoogle} />
-      )}
+      {loading ? <LoaderTasker text={"Loading your todos"} /> : nonLoadingComp}
       <Footer />
     </div>
   );

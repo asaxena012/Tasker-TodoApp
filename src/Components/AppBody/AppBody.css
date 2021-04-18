@@ -43,17 +43,35 @@
   border-radius: 10px;
   outline: none;
   border: none;
-  transition: all 0.1s;
+  transition: all 0.3s;
 }
 
 .btn-add:hover {
   background-color: #394f68;
 }
 
-.btn-add:active {
+.btn-add:active,
+.btn-signout:active {
   transform: translate(1.2%, 1.2%);
 }
 
 .todos-container {
   margin-top: 45px;
+}
+
+.btn-signout {
+  font-family: "PT Sans", sans-serif;
+  margin-top: 40px;
+  background-color: #cad3c8;
+  color: #2c3a47;
+  padding: 30px 30px;
+  font-size: 20px;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+  transition: all 0.3s;
+}
+
+.btn-signout:hover {
+  background-color: #b6bdb4;
 }

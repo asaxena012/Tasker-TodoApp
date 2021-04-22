@@ -11,6 +11,10 @@
   transition: all 0.3s;
 }
 
+.todoDetail-container p {
+  cursor: pointer;
+}
+
 .undone {
   border: 1.5px solid #2c3a47;
 }

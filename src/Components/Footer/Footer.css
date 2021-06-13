@@ -39,11 +39,12 @@
 }
 
 .footer-wave {
-  height: 350px;
+  width:100%
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   .footer-wave {
+    width: unset;
     height: 200px;
   }
 

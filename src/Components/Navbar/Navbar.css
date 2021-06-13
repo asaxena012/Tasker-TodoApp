@@ -4,7 +4,7 @@
 }
 
 .nav-wave {
-  height: 350px;
+  width: 100%;
 }
 
 .nav-icon {
@@ -45,9 +45,10 @@
   opacity: 0 !important;
 }
 
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 600px) {
   .nav-wave {
     height: 200px;
+    width: unset;
   }
 
   .nav-row-container {
